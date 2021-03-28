@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
         <meta charset="utf-8">
         <title>Assignment 6 &laquo; Data Visualization Dashboard&raquo;</title>
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
@@ -8,21 +8,60 @@
         <!--Feel free to add more CSS files as needed-->
         <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
     </head>
-<body>
-    <div class="header">
-        <h3>Assignment 6 &laquo; Data Visualization Dashboard &raquo;</h3>
-    </div>
-    <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
-    <div class="row">
-        <div class="col-lg-6">
-            <div id="graph1"></div>
-            <div id="graph2"></div><br/>
+    <body>
+        <div class="header">
+            <h3>Assignment 6 &laquo; Data Visualization Dashboard - Netflix Collection &raquo;</h3>
         </div>
-        <div class="col-lg-6">
+        <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="buttons">
+                    <button type="button" class="btn btn-info" onclick="updateGraph1(1)">#1-14</button>
+                    &nbsp;  <!-- add space between buttons -->
+                    <button type="button" class="btn btn-info" onclick="updateGraph1(2)">#15-28</button>
+                    &nbsp;
+                    <button type="button" class="btn btn-info" onclick="updateGraph1(3)">#29-42</button>
+                </div>
+                <div id="graph1"></div>
+            </div>
             <div id="graph3"></div>
+            <div id="graph2"></div>
         </div>
-    </div>
-    <!--Feel free to add more JavaScript files as needed-->
-    <script type="text/javascript" src="main.js"></script>
-</body>
+        <!-- <div> -->
+
+        <!-- </div> -->
+        <div class="writeup">
+            <h4>Comments about the graphs</h4>
+            <div class="writeup-answers">
+                <p>-&nbsp;Graph 1 (top left): Answers question #1 (the number of titles per genre) with the bar plot. It ranks 42 genres on Netflix in total and divides into 3 sections. You can toggle through those sections with the buttons on top.</p>
+                <p>-&nbsp;Graph 2 (bottom): Answers question #2 (the average runtime of movies by release year) with connected scatterplot. Each dot represents average runtime (y axis) for a certain year (x axis). Although it was not asked in the question, connecting those points can show how the average runtime changed overtime. You can hover the mouse over each point and it shows the year and the average runtime for that year. Years with no movie release are shown as having average runtime of 0</p>
+                <p>-&nbsp;Graph 3 (top right): Answers question #3. This flow/network chart shows the connections among actors. Each node refers to an actor, and you can hover the mouse over it to see who the actor is. The chart only shows the connections between actors who have acted together more than 3 times. When you hover the mouse over the link, it also shows two actors who share the connection.</p>
+            </div>
+        </div>
+        <div class="writeup">
+            <h4>Written Questions</h4>
+            <div class="writeup-answers">
+                <p >1.&emsp;Please see the comments above. I described how these graphs answer the questions, while explaining what the graphs are and other details, such as filtering mothods and mouse hover.</p>
+                <p>2.
+                  <br>&emsp;- D3 can create so many different types of graphs. In this assignment, I was able to create 3 unique graphs without having previous experience.
+                  <br>&emsp;- With D3, it is easy to control details, such as colors, X-Y positions, font size/style, and interaction details.
+                  <br>&emsp;- While being flexible for our needs (first two points), it also has set functions that we can use to manipulate these factors. So we don't have to create new functions every single time, and use existing methods.
+                </p>
+                <p>3.
+                  <br>&emsp;- The mentioned flexibility can also be the disadvantage. It is a great tool when we want to manipulate small details, but when we need an easy, fast way to create visualizations, D3 may take too much time to create even simple graphs.
+                  <br>&emsp;- There is no predetermined graph we can use. On some other platforms, we can create graphs based on existing styles on excel. But for d3, we have to decide all the small details.
+                  <br>&emsp;- For biginers like myself, compared to other visualization methods, it takes more time to learn. It was easier and took faster to learn other visualization methods, including Pandas. It took a lot longer to create even 3 graphs, and I can probably create something similar at least for the first two graphs with excel.
+                </p>
+                <p>4.&emsp;All of the graphs on the dashboard is accessible for anyone who is not blind, including those who are color blind, no matter what extent. The colors are relatively easy to distinguish, especially in the network chart. In addition, even though I use colors to make it colorful and not black and white, the interpretations of the graphs do not rely on those colors. Even if someone cannot distinguish the colors between different nodes/separate links in Graph 3 (network chart), they can still tell that those links are not connected. For the same reason, Graph 1 (barplot) provides a nice gradiant of blue-to-green colors, but the data is visible without seeing those colors. In the second reading, it was mentioned that there are people who have difficult time distinguishing blue and green. But even if the first (blue) and last genre (green/lighter blue) in the bar plot appear to be the same/similar colors, interpreting this graph is still not difficult. However, these graphs, especially the network chart, may not be accessible for blind individuals who rely on speech assistive technology. At this point, I am not familiar with how network charts can be represented in assistive technology, and it may be very difficult for blind individuals to visualize what it looks like just in their head. For that purpose, it might be better to include a simple table that includes the same data. For example, each row can represent all the connections that a certain actor has. This may not be the best way for sighted individuals to understand the networks, but it may be the opposite for blind individuals.
+                </p>
+                <p >5.&emsp;After reading that some people have difficult time distinguishing blue and green, I thought about changing the color scheme of the first bar plot. But the reading also mentioned other types of color blindness/impairments, and I realized that it is very hard to be inclusive for everyone. I thought about it for a while but decided not to change the color, mainly because I believe that not being able to distinguish those colors do not impact the ability to understand the graph. Even if the graph was only black and white, we should be able to see which genre has how many titles. In addition, when I was thinking about how blind individuals may interpret this graph, I thought about not dividing into three sections because I was not how this graph might be represented in assistive technology. However, I decided to still separate into sections because the graph would be too long and big to represent 42 genres at once, and for majority of people who are sighted, it would be even harder to see.
+                </p>
+            </div>
+        </div>
+        <!--Feel free to add more JavaScript files as needed-->
+        <script type="text/javascript" src="main.js"></script>
+        <script type="text/javascript" src="graph1.js"></script>
+        <script type="text/javascript" src="graph2.js"></script>
+        <script type="text/javascript" src="graph3.js"></script>
+    </body>
 </html>

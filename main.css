@@ -10,3 +10,32 @@
 }
 
 /* Include any custom CSS styling here! */
+button:focus {
+    outline: 0 !important;
+}
+.tooltip {
+    position: absolute;
+    font-size: 12px;
+    min-width: 100px;
+    padding: 10px;
+    width:  auto;
+    height: auto;
+    pointer-events: none;
+    background-color: white;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.writeup {
+    padding: 10px;
+    margin: 20px;
+}
+.writeup-answers{
+    /* padding: 20px; */
+    margin: 20px;
+}
