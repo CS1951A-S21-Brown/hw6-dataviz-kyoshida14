@@ -72,8 +72,8 @@ function setGraph3(data) {
             .attr("transform", `translate(${(graph_3_width-margin.left-margin.right)/2-50},
                                           ${(graph_3_height-margin.top-margin.bottom)})`)
             .style("text-anchor", "middle")
-            .style("font-size", 10)
-            .text("**The flow chart onlys shows the connections between actors who have acted together more than 3 times.");
+            .style("font-size", 12)
+            .text("**The flow chart onlys shows the connections between actors who have appeared on screen together in more than 3 movies.");
 
   //update the position of nodes and links
   function ticked() {

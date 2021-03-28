@@ -104,7 +104,7 @@ function setGraph2(data) {
             .attr("transform", `translate(${(graph_2_width-margin.left-margin.right)/2},
                                           ${(graph_2_height-margin.top-margin.bottom)+35})`)
             .style("text-anchor", "middle")
-            .style("font-size", 10)
+            .style("font-size", 12)
             .text("*Years with no movie release are shown as having average runtime of 0.");
 }
 
